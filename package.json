@@ -1,6 +1,6 @@
 {
   "name": "purescript-chalk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "PureScript wrapper around Chalk.",
   "license": "MIT",
   "devDependencies": {
@@ -10,8 +10,8 @@
   "dependencies": {
     "chalk": "^0.5.1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/joneshf/purescript-chalk.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/joneshf/purescript-chalk.git"
   }
 }
