@@ -1,0 +1,7 @@
+{
+  "name": "purescript-chalk",
+  "version": "0.0.0",
+  "description": "PureScript wrapper around Chalk.",
+  "license": "MIT"
+}
+
