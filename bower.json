@@ -1,7 +1,9 @@
 {
   "name": "purescript-chalk",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "PureScript wrapper around Chalk.",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "~0.5.1"
+  }
 }
-
