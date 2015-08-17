@@ -1,51 +1,13 @@
-# Module Documentation
+# purescript-chalk
 
-## Module Data.String.Chalk
+Bindings to [Chalk](https://github.com/chalk/chalk) and [related](https://github.com/chalk/chalk#related) libraries.
 
-### Types
+## Installation
 
-    data Style where
-      Bold :: Style
-      Dim :: Style
-      Hidden :: Style
-      Inverse :: Style
-      Italic :: Style
-      Reset :: Style
-      Strikethrough :: Style
-      Underline :: Style
-      Black :: Style
-      Blue :: Style
-      Cyan :: Style
-      Gray :: Style
-      Green :: Style
-      Magenta :: Style
-      Red :: Style
-      White :: Style
-      Yellow :: Style
-      BgBlack :: Style
-      BgBlue :: Style
-      BgCyan :: Style
-      BgGreen :: Style
-      BgMagenta :: Style
-      BgRed :: Style
-      BgWhite :: Style
-      BgYellow :: Style
+```
+bower install purescript-chalk
+```
 
+## Module documentation
 
-### Type Class Instances
-
-    instance showStyle :: Show Style
-
-
-### Values
-
-    chalk :: Style -> String -> String
-
-    chalk' :: [Style] -> String -> String
-
-    hasColor :: String -> Boolean
-
-    stripColor :: String -> String
-
-
-
+- [Data.String.Chalk](docs/Data/String/Chalk.md)
