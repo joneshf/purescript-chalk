@@ -12,11 +12,6 @@
     "url": "http://github.com/joneshf/purescript-chalk.git"
   },
   "dependencies": {
-    "chalk": "",
-    "ansi-styles": "",
-    "ansi-regex": "",
-    "strip-ansi": "",
-    "has-ansi": "",
-    "supports-color": ""
+    "chalk": ""
   }
 }

@@ -3,8 +3,6 @@
 
 // module Test.Main
 
-exports.escape = JSON.stringify
-
 exports.truthy = function(x) {
   if (x) {
     return true;

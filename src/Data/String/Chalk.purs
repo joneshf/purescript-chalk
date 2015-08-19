@@ -1,27 +1,15 @@
 module Data.String.Chalk
   ( Style(..)
   , styles
-  , textColors
-  , bgColors
-  , typeStyles
   , chalk
   , chalk'
-  , hasAnsi
-  , stripAnsi
-  , ansiRegex
-  , supportsColor
-  , ansiInfo
   ) where
 
 import Prelude
 
-import Control.Monad.Eff         (Eff())
-import Control.Monad.Eff.Console (CONSOLE())
 import Data.Array                (uncons)
 import Data.Foldable             (foldl)
 import Data.Maybe                (Maybe(..))
-import Data.String.Regex         (Regex())
-import Data.StrMap               (StrMap())
 import Unsafe.Coerce             (unsafeCoerce)
 import Test.QuickCheck.Arbitrary (Arbitrary, arbitrary)
 import Test.QuickCheck.Gen       (elements)
@@ -31,23 +19,6 @@ foreign import data Builder :: *
 
 -- Internal
 foreign import localChalk :: Chalk
-
--- Internal
-foreign import ansiStyles :: StrMap { open :: String, close :: String }
-
--- | Returns whether the string is styled (contains ANSI codes).
-foreign import hasAnsi :: String -> Boolean
-
--- | Removes all styling (ANSI codes) from the string.
-foreign import stripAnsi :: String -> String
-
--- | Regex for matching ANSI codes.
-foreign import ansiRegex :: Regex
-
--- | Return whether the current terminal supports color. The JavaScript Chalk
--- | automatically prevents styling for terminals not supporting it. This
--- | has been disabled for this library.
-foreign import supportsColor :: forall eff. Eff (console :: CONSOLE | eff) Boolean
 
 -- Internal
 foreign import unsafeGet :: forall o a. String -> o -> a
@@ -118,11 +89,6 @@ chalk' stys str = case uncons stys of
                      let iter = flip styleBuilder
                          init = mkBuilder x.head localChalk
                       in build (foldl iter init x.tail) str
-
-
--- | The opening and closing ANSI code for a styles.
-ansiInfo :: Style -> { open :: String, close :: String }
-ansiInfo style = unsafeGet (show style) ansiStyles
 
 -- Instances ------------------------------------------------------------------
 instance showStyle :: Show Style where

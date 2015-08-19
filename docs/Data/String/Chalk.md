@@ -1,39 +1,5 @@
 ## Module Data.String.Chalk
 
-#### `hasAnsi`
-
-``` purescript
-hasAnsi :: String -> Boolean
-```
-
-Returns whether the string is styled (contains ANSI codes).
-
-#### `stripAnsi`
-
-``` purescript
-stripAnsi :: String -> String
-```
-
-Removes all styling (ANSI codes) from the string.
-
-#### `ansiRegex`
-
-``` purescript
-ansiRegex :: Regex
-```
-
-Regex for matching ANSI codes.
-
-#### `supportsColor`
-
-``` purescript
-supportsColor :: forall eff. Eff (console :: CONSOLE | eff) Boolean
-```
-
-Return whether the current terminal supports color. The JavaScript Chalk
-automatically prevents styling for terminals not supporting it. This
-has been disabled for this library.
-
 #### `Style`
 
 ``` purescript
@@ -79,30 +45,6 @@ styles :: Array Style
 
 All styles excluding `Reset`.
 
-#### `textColors`
-
-``` purescript
-textColors :: Array Style
-```
-
-All text coloring styles.
-
-#### `bgColors`
-
-``` purescript
-bgColors :: Array Style
-```
-
-All background coloring styles.
-
-#### `typeStyles`
-
-``` purescript
-typeStyles :: Array Style
-```
-
-All non-coloring styles, excluding `Reset`.
-
 #### `chalk`
 
 ``` purescript
@@ -124,13 +66,5 @@ The same as `chalk` but for multiple styles. In case of conflict
 (e.g. multiple colors or a `Reset`), the later style will generally take
 precedence, however both styles are added and so it is dependent on the
 terminal's rendering.
-
-#### `ansiInfo`
-
-``` purescript
-ansiInfo :: Style -> { open :: String, close :: String }
-```
-
-The opening and closing ANSI code for a styles.
 
 
