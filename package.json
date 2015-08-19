@@ -7,11 +7,11 @@
     "gulp": "^3.8.6",
     "gulp-purescript": "0.0.9"
   },
-  "peerDependencies": {
-    "chalk": "^0.x"
-  },
   "repository": {
     "type": "git",
     "url": "http://github.com/joneshf/purescript-chalk.git"
+  },
+  "dependencies": {
+    "chalk": ""
   }
 }
